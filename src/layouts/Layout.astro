@@ -1,0 +1,53 @@
+---
+import "@fontsource-variable/onest"
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={ description } />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/temp-logo.svg" />
+		<title>{ title }</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		color-scheme: dark light;
+		font-family: "Onest Variable", system-ui, -apple-system, sans-serif;
+		color: var(--text-reg);
+		--text-reg: rgba(255, 255, 255, 0.9);
+		--text-strong: white;
+	}
+	body {
+		scroll-behavior: smooth;
+	}
+
+	h1, h2, h3 {
+		text-wrap: balance;
+	}
+	p {
+		text-wrap: pretty;
+		color: var(--text-reg);
+		line-height: 1.4;
+		font-weight: 100;
+		font-size: 1em;
+		letter-spacing: .5px;
+	}
+	p strong {
+		color: var(--text-strong);
+		font-weight: 700;
+	}
+	
+</style>
