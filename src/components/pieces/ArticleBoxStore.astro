@@ -1,0 +1,23 @@
+---
+const { title, text, src, alt } = Astro.props
+
+interface Props {
+	title: string;
+	text: string;
+    src: string;
+	alt: string;
+    class?: string;
+}
+---
+
+<article class=`relative w-full h-full rounded overflow-hidden flex items-center md:items-left ${Astro.props.class}`>
+    <img src={ src } class="absolute w-full h-full object-cover object-right-bottom z-0" alt={ alt }>
+    <span class="absolute w-full h-full bg-[var(--overlay)] z-10"></span>
+    <div class="absolute w-full z-20 pl-4 flex flex-col gap-1 items-center">
+        <h2 class="text-3xl">{ title }</h2>
+        <h3 class="text-sm">{ text }</h3>
+        <div class="flex flex-wrap justify-center mt-4 gap-2">
+           <slot />
+        </div>
+    </div>
+</article>

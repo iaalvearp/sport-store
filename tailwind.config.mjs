@@ -4,7 +4,11 @@ import animations from "tailwindcss-animated";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        custom: ["vanilla", "sans-serif"], // 'micross' es el nombre de la fuente
+      },
+    },
   },
   plugins: [animations],
 };

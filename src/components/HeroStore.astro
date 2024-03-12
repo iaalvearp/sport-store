@@ -1,0 +1,49 @@
+---
+import BtnStore from './pieces/BtnStore.astro'
+import ArticleBoxStore from './pieces/ArticleBoxStore.astro'
+---
+
+
+<header class="min-h-screen w-full pb-6">
+    <div class="w-[90%] max-w-5xl min-h-full mx-auto grid gap-6 pt-24 md:grid-cols-2 md:grid-rows-2">
+        <article class="relative w-full md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2 min-h-96 md:min-h-[18rem] rounded overflow-hidden flex items-center md:justify-start">
+            <img src="/img/art1.webp" class="absolute w-full h-full object-cover  object-right-bottom md:object-center z-0" alt="">
+            <span class="absolute w-full h-full bg-[var(--overlay)] z-10"></span>
+            <div class="absolute w-full z-20 flex flex-col gap-1 items-center">
+                <h2 class="vanilla-font text-sm">Black Friday Sale!</h2>
+                <h1 class="text-5xl"><strong>Sport</strong> Store</h1>
+                <h3 class="text-sm">Amazing discounts!</h3>
+                <div class="flex flex-wrap justify-center mt-4 gap-2">
+                    <BtnStore 
+                    href="#"
+                    text='BROWSE'/>
+                    <BtnStore 
+                    href="#"
+                    text='SHOP THE LOOK'/>
+                </div>
+            </div>
+        </article>
+        <ArticleBoxStore class='min-h-60 w-full md:col-start-1 md:col-end-2 md:row-start-2 md:row-end-3'
+        title="Profesional Clothes"
+        text="Inspire your unique style with us."
+        src='/img/art3.webp'
+        alt='Sport-Store-pic-3' >
+            <BtnStore
+            href='#'
+            text="LET'S DO IT" />
+        </ArticleBoxStore>
+        <ArticleBoxStore class='min-h-60 w-full md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3'
+        title="For Every Occasion"
+        text="A mix between Urban and Sport Style."
+        src='/img/art4.webp'
+        alt='Sport-Store-pic-4' >
+            <BtnStore
+            href='#'
+            text="SEE MORE" />
+        </ArticleBoxStore>
+    </div>
+</header>
+
+<style>
+    
+</style>

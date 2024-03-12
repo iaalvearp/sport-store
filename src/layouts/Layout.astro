@@ -26,12 +26,24 @@ const { title, description } = Astro.props;
 	:root {
 		color-scheme: dark light;
 		font-family: "Onest Variable", system-ui, -apple-system, sans-serif;
-		color: var(--text-reg);
 		--text-reg: rgba(255, 255, 255, 0.9);
 		--text-strong: white;
+		--bg: rgb(51, 51, 51);
+		--overlay: rgb(51, 51, 51, 0.7);
+		--overlay-btn: rgb(51, 51, 51, 0.1);
 	}
+	@font-face {
+		font-family: 'vanilla';
+		src: url('/fonts/vanillapersonal.ttf') format('truetype');
+		}
+		.vanilla-font {
+			font-family: 'vanilla';
+		}
 	body {
 		scroll-behavior: smooth;
+		background-color: var(--bg);
+		color: var(--text-reg);
+		transition: background-color color 500ms;
 	}
 
 	h1, h2, h3 {
@@ -48,6 +60,16 @@ const { title, description } = Astro.props;
 	p strong {
 		color: var(--text-strong);
 		font-weight: 700;
+	}
+	@media (prefers-color-scheme: light) {
+		:root {
+			--text-reg: rgba(51, 51, 51);
+			--text-strong: black;
+			--bg: rgb(251, 251, 251);
+			color: var(--text-reg);
+			--overlay: rgb(251, 251, 251, 0.5);
+			--overlay-btn: rgb(251, 251, 251, 0.1);
+		}
 	}
 	
 </style>
