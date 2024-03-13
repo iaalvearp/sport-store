@@ -29,7 +29,7 @@ const { title, description } = Astro.props;
 		--text-reg: rgba(255, 255, 255, 0.9);
 		--text-strong: white;
 		--bg: rgb(51, 51, 51);
-		--overlay: rgb(51, 51, 51, 0.7);
+		--overlay: rgb(51, 51, 51, 0.5);
 		--overlay-btn: rgb(51, 51, 51, 0.1);
 	}
 	@font-face {
@@ -71,5 +71,30 @@ const { title, description } = Astro.props;
 			--overlay-btn: rgb(251, 251, 251, 0.1);
 		}
 	}
-	
+	.fade-scroll {
+		animation: fade-scroll linear both;
+		animation-timeline: view();
+		animation-range: entry 30% cover 30%;
+	}
+	.first-load {
+		animation: first-load ease-out 500ms;
+	}
+	@keyframes fade-scroll {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	@keyframes first-load {
+		from {
+			opacity: 0;
+			transform: translateY(3rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 </style>
