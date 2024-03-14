@@ -1,0 +1,68 @@
+---
+import SlideCarouselStore from './pieces/SlideCarouselStore.astro'
+---
+
+<script>
+    const copy = document.getElementById('carousel-inner').cloneNode(true)
+    document.getElementById('carousel').appendChild(copy)
+</script>
+
+
+
+<section id="carousel" class="overflow-hidden flex h-40 w-full lg:h-60 py-10 whitespace-nowrap relative">
+    <div class="h-full w-[10%] max-w-40 absolute left-0 z-20 bg-gradient-to-r from-[var(--bg)] via-[var(--bg)] to-transparent"></div>
+    <div id="carousel-inner" class="slide flex items-center h-full flex-nowrap gap-10 lg:gap-20 z-10 bg-[var(--bg)]">
+        <SlideCarouselStore 
+        href="https://www.adidas.com/us" 
+        src="/icons/adidas.png"
+        alt="adidas-logo"/>
+        <SlideCarouselStore 
+        href="https://www.converse.com/" 
+        src="/icons/converse.png" 
+        alt="converse-logo"/>
+        <SlideCarouselStore 
+        href="https://www.nike.com/" 
+        src="/icons/nike.png" 
+        alt="nike-logo"/>
+        <SlideCarouselStore 
+        href="https://www.reebok.com/" 
+        src="/icons/reebok.png" 
+        alt="reebok-logo"/>
+        <SlideCarouselStore 
+        href="https://www.underarmour.com/en-us/" 
+        src="/icons/under.png" 
+        alt="under-armour-logo"/>
+        <SlideCarouselStore 
+        href="https://www.newbalance.com/" 
+        src="/icons/balance.png" 
+        alt="new-balance-logo"/>
+        <SlideCarouselStore 
+        href="https://www.nike.com/w/jordan-shoes-37eefzy7ok" 
+        src="/icons/jordan.png" 
+        alt="jordan-logo"/>
+        <SlideCarouselStore 
+        href="https://www.vans.com/" 
+        src="/icons/vans.png" 
+        alt="vans-logo"/>
+    </div>
+    <div class="h-full w-[10%] max-w-40 right-0 absolute z-20 bg-gradient-to-l from-[var(--bg)] via-[var(--bg)] to-transparent"></div>
+</section>
+
+<style>
+
+    .slide {
+        animation: slide linear 30s infinite;
+    }
+    section:hover .slide {
+        animation-play-state: paused;
+    }
+    @keyframes slide {
+        0% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    
+</style>
