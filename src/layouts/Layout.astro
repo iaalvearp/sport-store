@@ -29,7 +29,7 @@ const { title, description } = Astro.props;
 		--text-reg: rgba(255, 255, 255, 0.9);
 		--text-strong: white;
 		--bg: rgb(51, 51, 51);
-		--overlay: rgb(51, 51, 51, 0.5);
+		--overlay: rgb(51, 51, 51, 0.6);
 		--overlay-btn: rgb(51, 51, 51, 0.1);
 	}
 	@font-face {
@@ -43,7 +43,7 @@ const { title, description } = Astro.props;
 		scroll-behavior: smooth;
 		background-color: var(--bg);
 		color: var(--text-reg);
-		transition: background-color color 500ms;
+		transition: background-color 500ms;
 	}
 
 	h1, h2, h3 {
@@ -82,9 +82,11 @@ const { title, description } = Astro.props;
 	@keyframes fade-scroll {
 		from {
 			opacity: 0;
+			transform: scale(.5);
 		}
 		to {
 			opacity: 1;
+			transform: scale(1);
 		}
 	}
 	@keyframes first-load {

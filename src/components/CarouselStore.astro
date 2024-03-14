@@ -9,7 +9,7 @@ import SlideCarouselStore from './pieces/SlideCarouselStore.astro'
 
 
 
-<section id="carousel" class="overflow-hidden flex h-40 w-full lg:h-60 py-10 whitespace-nowrap relative">
+<section id="carousel" class="fade-scroll overflow-hidden flex h-40 w-full lg:h-60 py-10 whitespace-nowrap relative">
     <div class="h-full w-[10%] max-w-40 absolute left-0 z-20 bg-gradient-to-r from-[var(--bg)] via-[var(--bg)] to-transparent"></div>
     <div id="carousel-inner" class="slide flex items-center h-full flex-nowrap gap-10 lg:gap-20 z-10 bg-[var(--bg)]">
         <SlideCarouselStore 
@@ -64,5 +64,9 @@ import SlideCarouselStore from './pieces/SlideCarouselStore.astro'
             transform: translateX(-100%);
         }
     }
-    
+    @media (width => 768px) {
+        .slide {
+            animation: slide linear 30s infinite;
+        }
+    }
 </style>

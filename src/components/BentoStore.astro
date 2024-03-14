@@ -1,0 +1,28 @@
+---
+import BentoItem from './pieces/BentoItem.astro'
+import BtnBgStore from './pieces/BtnBgStore.astro'
+---
+
+<section class="min-h-full h-full relative py-4">
+    <div class="w-[90%] h-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-10 auto-rows-[20rem] gap-4">
+        <BentoItem class='md:col-span-5 md:row-span-2'
+        title="EVERYTHING FOR EVERYONE" 
+        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quo." 
+        src='/img/art2.webp'
+        alt='art-2-pic-sport-store'>
+            <BtnBgStore 
+            href='#'
+            text='Shop'/>
+        </BentoItem>
+        <BentoItem class='md:col-span-5 md:row-start-1 md:col-start-6'
+        title="Summer Must-Hover:" 
+        text="Air Max Dia" 
+        src='/img/art4.webp'
+        alt='art-4-pic-sport-store'/>
+        <BentoItem class='md:col-span-5 md:row-start-2 md:col-start-6'
+        title="Air Jordan 11 Retro" 
+        text="Low LE" 
+        src='/img/art3.webp'
+        alt='art-3-pic-sport-store'/>
+    </div> 
+</section>
